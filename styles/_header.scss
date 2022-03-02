@@ -1,0 +1,86 @@
+//ESTILOS DEL HEADER
+
+//mixins
+@mixin menu {
+    font-family: var(--primary-font);
+    font-size: 13px;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+
+}
+
+header {
+    width: 100%;
+    height: 5.9%;
+    border-top: 6px solid blue;
+    display: flex;
+    
+
+    #logo {
+        align-items: center;
+        position: relative;
+
+        width: 59.1px;
+        height: 59.1px;
+        margin-left: 10.8%;
+        margin-top: 1.5%;
+        
+    }
+
+    nav {
+        position: relative;
+        margin-left: 37.5%;
+        
+        margin-top: 1.5%;
+        display: flex;
+        
+
+        ul {
+            display: inline-flex;
+            padding-top: 5px;
+            
+
+            li {
+                @include menu();
+                display: inline-flex;
+                padding-right: 50px;
+            
+            a{
+                text-decoration: none;
+                color: blue;
+            }
+            }
+        }
+
+        #boton_gifo {
+            position: relative;
+            display: flex;
+            width: 54px;
+            height: 54px;
+            border: none;
+            border-radius: 100px;
+            background-image: url(/images/button-crear-gifo.svg);
+            background-repeat: no-repeat;
+            border: none;
+
+            
+        }
+
+        #boton_gifo:hover {
+            background-image: url(/images/CTA-crear-gifo-hover.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+
+}
+
+.modoNoc{
+    cursor: pointer;
+}
+
+#logo{
+    cursor: pointer;
+}
+
