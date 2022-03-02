@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifos Principal</title>
+    <!--<link rel="stylesheet" href="/styles/styles.css">-->
+    <link class="nocturno" rel="stylesheet" href="/styles/nocturno.css">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="/images/logo-desktop.svg" alt="logo_gifos">
+        <nav>
+            <ul>
+                <li class="modoNoc">MODO NOCTURNO</li>
+                <li class="favhtml"><a href="/favoritos.html">FAVORITOS</a></li>
+                <li class="gifhtml"><a href="/misgifos.html">MIS GIFOS</a></li>
+            </ul>
+            <div id="boton_gifo" alt="crear_gifo"></div>
+        </nav>
+        
+
+
+    </header>
+    <main>
+        <section id="seccionBuscar">
+            <div id="busqueda">
+                <p id="tituloSeccionBuscar">Inspírate, busca, guarda, y crea los mejores <span
+                        id="gifosEnfasis">GIFOS</span></p>
+                <img id="imagenSeccionBuscar" src="/images/ilustra_header.svg" alt="ilustra header">
+
+                <div id="buscador">
+                    <div id="inputLine">
+                        <img id="iconoLupa" src="/images/icon-search.svg" alt="">
+                        <input id="buscar" type="textbox" placeholder="Busca GIFOS y mas" maxlength="59">
+                        <img id="iconoClose" src="/images/icon-search.svg" alt="">
+                    </div>
+
+                    <div class="container">
+                        <ul id="listaResultados">
+
+
+                        </ul>
+                    </div>
+
+                </div>
+                <p id="palabrasTrending">
+                    <span id="trendingEnfasis">Trending: </span>
+                    <br>
+                    <span id="topicTren"></span>
+                </p>
+                
+                <h2 id="titResBusqueda"></h2>
+                <div id="restopic">
+
+                </div>
+                <input src="/images/CTA-ver-mas.svg" id="mas" type="button" value="VER MáS">
+                
+
+            </div>
+        </section>
+        <section id="seccionCarrusel">
+            
+            <div id="tituloSeccion">
+                <h1 id="lineaUno">Trending GIFOS</h1>
+                <h2 id="lineaDos">Mira los últimos GIFO de nuestra comunidad.</h2>
+            </div>
+
+
+            <div id="trending">
+                <div id='sleft'></div>
+                
+                <div class="giftrending">
+                    <img class="gifoImagen" src="" alt="">
+                    <div class="botonesGifo">
+                        <img class="fav btn" src='/images/icon-fav.svg' alt="">
+                        <img class="down btn" src='/images/icon-download.svg' alt="">
+                        <img class="exp btn" src='/images/icon-max-normal.svg' alt="">
+                    </div>
+                    <div class='datosGifo'>
+                        <p class="dataGifuser">user<br>
+                            <strong>title</strong>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="giftrending">
+                    <img class="gifoImagen" src="" alt="">
+                    <div class="botonesGifo">
+                        <img class="fav btn" src='/images/icon-fav.svg' alt="">
+                        <img class="down btn" src='/images/icon-download.svg' alt="">
+                        <img class="exp btn" src='/images/icon-max-normal.svg' alt="">
+
+                    </div>
+                    <div class='datosGifo'>
+                        <p class="dataGifuser">user<br>
+                            <strong>title</strong>
+                        </p>
+
+
+                    </div>
+
+                </div>
+                <div class="giftrending">
+                    <img class="gifoImagen" src="" alt="">
+                    <div class="botonesGifo">
+                        <img class="fav btn" src='/images/icon-fav.svg' alt="">
+                        <img class="down btn" src='/images/icon-download.svg' alt="">
+                        <img class="exp btn" src='/images/icon-max-normal.svg' alt="">
+
+                    </div>
+                    <div class='datosGifo'>
+                        <p class="dataGifuser">user<br>
+                            <strong>title</strong>
+                        </p>
+
+
+                    </div>
+
+                </div>
+              
+                <div id="sright"></div>
+            </div>
+
+            
+
+
+            <div id="popUpBox">
+
+
+
+
+            </div>
+        </section>
+    </main>
+    <footer id="fotindex">
+
+        <div id="redes">
+            <p id="compartir">Compartir en:</p>
+            <img class="redes" src="/images/icon_facebook.svg" alt="icon_facebook">
+            <img id="twitter" class="redes" src="/images/icon-twitter-hover.svg" alt="icon-twitter">
+            <img class="redes" src="/images/icon_instagram.svg" alt="icon_instagram">
+        </div>
+
+        <p id="copyright">© GIFOS 2020 All Rights Reserved.</p>
+
+    </footer>
+   
+    <script src="/scripts/carrusel.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/nocturno.js"></script>
+</body>
+
+
+</html>
