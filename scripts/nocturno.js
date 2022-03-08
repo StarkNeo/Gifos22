@@ -1,41 +1,57 @@
-/*let modo=document.querySelector('link','nocturno');
 
-if (modo==='nocturno') {
-    let iconoClose = document.getElementById('iconoClose');
-    let iconoLupa = document.getElementById('iconoLupa');
-    iconoClose.src='/images/icon-search-modo-noct.svg';
-    iconoLupa.src='/images/icon-search-modo-noct.svg';  
-    
-}
-*/
 //PASAR ESTO A NOCTURNO SCSS DESPUES
-function nocturno() {
-    document.addEventListener('click',e=>{
-        if (e.target.className==='modoNoc') {
-            let listaNoc=document.getElementsByTagName('li');
-            listaNoc[0].innerHTML='MODO DIURNO';
-            let logoNoc=document.getElementById('logo');
-            logoNoc.src='/images/Logo-modo-noc.svg';
-            let hojaStyle=document.querySelector('link','diurno');
-            hojaStyle.href="/styles/nocturno.css";
-            
+var estatus;
+let hojaStyle = document.querySelector('link', 'status');
 
-            /*
-            let btnsliderLeft=document.getElementById('sleft');
-            btnsliderLeft.src='/images/button-slider-left-md-noct.svg';
-            let btnsliderRight=document.getElementById('sright');
-            btnsliderRight.src='/images/button-slider-right-md-noct.svg';
-            let btnmas=document.getElementById('mas');
-            btnmas.src='/images/CTA-ver+-modo-noc.svg';
-            let twitter=document.getElementById('twitter');
-            twitter.src="/images/icon_twitter_noc.svg";
-            */
+
+function vista() {
+    if (!localStorage.getItem('modoVista')) {
+        estatus = 'modoDiu';
+        localStorage.setItem('modoVista', estatus);
+    }
+
+    else {
+        estatus = localStorage.getItem('modoVista');
+    }
+
+    if (estatus==='modoDiu') {
+        hojaStyle.href='/styles/styles.css';
+    }
+    else if(estatus==='modoNoc'){
+        hojaStyle.href='/styles/nocturno.css';
+    }
+}
+
+vista();
+
+function modo() {
+    estatus = document.getElementsByTagName('li')[0].className;
+    console.log(estatus);
+    localStorage.setItem('modoVista', estatus);
+}
+
+var listaNoc = document.getElementsByTagName('li')[0];
+let logoNoc = document.getElementById('logo');
+
+
+listaNoc.addEventListener('click', () => {
+    if (listaNoc.className === 'modoDiu') {
+        listaNoc.innerHTML = 'MODO DIURNO';
+        listaNoc.className = "modoNoc";
+        logoNoc.src = '/images/Logo-modo-noc.svg';
+    }
+    else if (listaNoc.className === 'modoNoc') {
+
+        listaNoc.className = "modoDiu";
+        listaNoc.innerHTML = 'MODO NOCTURNO';
+        logoNoc.src = '/images/logo-desktop.svg';
+    }
     
     
-    
-        }
-    })
-        
-} 
-nocturno();
+
+})
+modo()
+
+
+
 
