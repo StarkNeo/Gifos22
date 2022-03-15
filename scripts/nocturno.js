@@ -1,57 +1,36 @@
+var vista;
+var estilo=document.querySelector('link','status');
 
-//PASAR ESTO A NOCTURNO SCSS DESPUES
-var estatus;
-let hojaStyle = document.querySelector('link', 'status');
+if (!localStorage.modo) {
+    vista='modoDiu';
+    localStorage.setItem('modo',vista);
+}
+else {
+ vista=localStorage.getItem('modo');
+}
 
-
-function vista() {
-    if (!localStorage.getItem('modoVista')) {
-        estatus = 'modoDiu';
-        localStorage.setItem('modoVista', estatus);
-    }
-
-    else {
-        estatus = localStorage.getItem('modoVista');
-    }
-
-    if (estatus==='modoDiu') {
-        hojaStyle.href='/styles/styles.css';
-    }
-    else if(estatus==='modoNoc'){
-        hojaStyle.href='/styles/nocturno.css';
+function decision() {
+    
+    if (vista==='modoDiu') {
+        estilo.href='/styles/styles.css';
+    } else {
+        estilo.href='/styles/nocturno.css';
     }
 }
 
-vista();
-
-function modo() {
-    estatus = document.getElementsByTagName('li')[0].className;
-    console.log(estatus);
-    localStorage.setItem('modoVista', estatus);
-}
-
-var listaNoc = document.getElementsByTagName('li')[0];
-let logoNoc = document.getElementById('logo');
-
-
-listaNoc.addEventListener('click', () => {
-    if (listaNoc.className === 'modoDiu') {
-        listaNoc.innerHTML = 'MODO DIURNO';
-        listaNoc.className = "modoNoc";
-        logoNoc.src = '/images/Logo-modo-noc.svg';
+decision();
+document.addEventListener('click',e=>{
+    if (e.target.className==='modoDiu') {
+        e.target.className='modoNoc';
+        vista='modoNoc';
+        
     }
-    else if (listaNoc.className === 'modoNoc') {
+    else if(e.target.className==='modoNoc'){
+        e.target.className='modoDiu';
+        vista='modoDiu';
 
-        listaNoc.className = "modoDiu";
-        listaNoc.innerHTML = 'MODO NOCTURNO';
-        logoNoc.src = '/images/logo-desktop.svg';
+        //localStorage.setItem('modo',vista);      
     }
-    
-    
-
+    localStorage.setItem('modo',vista);
+    decision();
 })
-modo()
-
-
-
-
