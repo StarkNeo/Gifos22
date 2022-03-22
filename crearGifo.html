@@ -25,6 +25,80 @@
 
 
     </header>
+
+
+    <main id="contenedorPrincipal">
+        <section id="imagenCamara">
+            <img id="cintaChica" src="/images/element_cinta1.svg" alt="cinta Chica">
+            <img id="cintaGrande" src="/images/element_cinta2.svg" alt="cinta Grande">
+            <img id="camara" src="/images/element-camara.svg" alt="imagen de la Camara">
+            <img id="luzCamara" src="/images/element-luz-camara.svg" alt="luz de camara">
+        </section>
+
+        <section id="grabacion">
+            <div id="videocont">
+                <video>
+
+                </video>
+                <div id="esperando">
+                    <div id="botones">
+                        <img class="btn descargar" id="" src="/images/icon-download.svg" alt="">
+                        <img class="btn link" id="" src="/images/icon-link-normal.svg" alt="">
+                    </div>
+
+                    <img id='check' class="loader" src="/images/loader.svg" alt="loader">
+                    <p id="msjespera">Estamos subiendo tu GIFO</p>
+                </div>
+                <div id="lineasTexto">
+                    <p id="txtLineaUno">Aquí podrás</p>
+                    <p id="txtLineaDos">crear tus propios<span id="palabraGifos"> GIFOS</span></p>
+                    <p id="txtLineaTres">¡Crea tu GIFO en sólo 3 pasos!</p>
+                    <p id="txtLineaCuatro">(sólo necesitas una cámara para grabar un video)</p>
+                </div>
+            </div>
+
+
+
+
+            <div id="pasos">
+                <h3 id="pasoUno">1</h3>
+                <h3 id="pasoDos">2</h3>
+                <h3 id="pasoTres">3</h3>
+
+            </div>
+            <p id="cronometro">
+                <span id="horas">00:</span>
+                <span id="minutos">00:</span>
+                <span id="segundos">00</span>
+            <p id="rewind">REPETIR CAPTURA</p>
+            </p>
+
+            <p id="barra"></p>
+            <p id="btncomenzar">COMENZAR</p>
+            <button id="grabar">GRABAR</button>
+            <button id="detener">FINALIZAR</button>
+            <button id="subir">SUBIR GIFO</button>
+
+
+        </section>
+
+        <section id="rolloCamara">
+            <img id='rollo' src="/images/pelicula.svg" alt="">
+        </section>
+        <div id="emergente">
+            <div id="tituloEmergente">
+                <p id="titCompartir">Compartir</p>
+                <button id='btnCerrar'>X</button>
+
+            </div>
+            <div id="texto">
+                <input id="cajaVinculo" type="text" value=''>
+                <button id="copiar" onclick="copiar()">Copiar</button>
+            </div>
+
+        </div>
+    </main>
+
     <footer id="fotindex">
 
         <div id="redes">

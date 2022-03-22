@@ -6,7 +6,7 @@
     font-size: 13px;
     color: #572EE5;
     letter-spacing: 0;
-    text-align: center;
+    
 
 }
 
@@ -39,12 +39,16 @@ header {
         ul {
             display: inline-flex;
             padding-top: 5px;
+            //background-color: #572EE5;
+            height: 18px;
             
-
             li {
                 @include menu();
                 display: inline-flex;
-                padding-right: 50px;
+                
+                margin-right: 50px;
+                
+                
             
             a{
                 text-decoration: none;
@@ -76,7 +80,11 @@ header {
 
 }
 
-.modoNoc{
+.modoNoc {
+    cursor: pointer;
+}
+
+.modoDiu {
     cursor: pointer;
 }
 
@@ -84,3 +92,9 @@ header {
     cursor: pointer;
 }
 
+li:hover{
+width: auto;
+border-bottom: 2px solid #5ED7C6;
+
+
+}
