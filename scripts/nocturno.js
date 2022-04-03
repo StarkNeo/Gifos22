@@ -1,6 +1,7 @@
 var vista;
 var estilo = document.querySelector('link', 'status');
 
+
 if (!localStorage.modo) {
     vista = 'modoDiu';
     localStorage.setItem('modo', vista);
@@ -12,28 +13,25 @@ else {
 function decision() {
     let logo = document.getElementById('logo');
     let modo = document.getElementsByTagName('li')[0];
-    let iconoClose = document.getElementById('iconoClose');
-    let iconoLupa = document.getElementById('iconoLupa');
-    //let btnsliderLeft = document.getElementById('sleft');
-    //let btnsliderRight = document.getElementById('sright');
-    let btnmas = document.getElementById('mas');
-
+    //let btnmas = document.getElementById('mas');
+    //let icon = document.getElementById('iconoClose');
 
 
     if (vista === 'modoDiu') {
         estilo.href = '/styles/styles.css';
         logo.src = "/images/logo-desktop.svg";
         modo.innerHTML = 'MODO NOCTURNO';
+     
     } else {
         estilo.href = '/styles/nocturno.css';
         modo.innerHTML = 'MODO DIURNO';
         logo.src = "/images/Logo-modo-noc.svg";
-        //iconoClose.src = '/images/icon-search-modo-noct.svg';
-        //iconoLupa.src = '/images/icon-search-modo-noct.svg';
-        //btnsliderLeft.src = '/images/button-slider-left-md-noct.svg';
-        //btnsliderRight.src = '/images/button-slider-right-md-noct.svg';
-        btnmas.src = '/images/CTA-ver+-modo-noc.svg';
+      //  btnmas.src = '/images/CTA-ver+-modo-noc.svg';
+        //icon.style.backgroundImage='url(/images/icon-search-modo-noct.svg)';
+        //icon.style.backgroundRepeat='no-repeat';
     }
+    
+
 }
 
 decision();

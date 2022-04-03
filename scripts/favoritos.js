@@ -12,8 +12,8 @@ let titulo = document.getElementById('tibus');
 //window.onload = giphy();
 
 
-//    if (!localStorage.getItem('favoritos')) {
-  //      localStorage.setItem('favoritos', '[]');
+  //  if (!localStorage.getItem('favoritos')) {
+    //    localStorage.setItem('favoritos', '[]');
     
     //}
     //let favoritos = JSON.parse(localStorage.getItem('favoritos'));

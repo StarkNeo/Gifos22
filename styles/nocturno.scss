@@ -110,6 +110,7 @@ header {
 
 .modoNoc{
     cursor: pointer;
+    
 }
 .modoDiu{
     cursor: pointer;
@@ -195,13 +196,15 @@ header {
                 color: #9CAFC3;
                 font-family: var(--secondary-font);
             }
+            
 
             #iconoClose {
                 position: relative;
                 cursor: pointer;
                 width: 20px;
                 height: 20px;
-
+                background-image: url(/images/icon-search-modo-noct.svg);
+                background-repeat: no-repeat;
             }
 
             #iconoLupa {
@@ -210,10 +213,18 @@ header {
                 visibility: hidden;
                 width: 20px;
                 height: 20px;
+                background-image: url(/images/icon-search-modo-noct.svg);
+                background-repeat: no-repeat;
+                
+                
             }
+            
+           
+            
+ 
 
         }
-
+        
 
         .container {
             position: relative;
@@ -402,6 +413,765 @@ header {
 
 
 }
+
+
+
+//-------------------------MAIN AREA DE FAVORITOS--------------//
+
+#storageFav {
+    position: relative;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+
+    #iconsecfav {
+        width: 28px;
+        height: 21px;
+        position: relative;
+        margin-top: 11px;
+        margin: auto;
+        margin-bottom: 6px;
+
+    }
+#pfav {
+        font-family: var(--primary-font);
+        font-size: 35px;
+        color: #572EE5;
+        line-height: 50px;
+        width: 44.9%;
+        height: 6.6%;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 36px;
+        
+
+    }
+}
+
+#areaSinFav {
+    display: flex;
+    width: 431px;   
+    height: auto;
+    flex-direction: column;
+    margin-top: 109.3px;
+   
+    align-items: center;
+
+    #msjsinFav {
+        display: flex;
+        font-family: Montserrat-Bold;
+        font-size: 22px;
+        color: #50E3C2;
+        text-align: center;
+        line-height: 33px;
+        width: 350px;
+        //height: 66px;
+        
+    }
+}
+
+#showfav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    align-self: center;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    
+
+
+
+
+}
+
+.frameFav {
+    display: flex;
+    position: relative;
+    margin-right: 2%;
+    
+    margin-left: 20px;
+   
+}
+    .giFav {
+        position: relative;
+        width: 260px;
+        height: 200px;
+        margin-bottom: 25px;
+     
+        
+    }
+
+    
+    .iconsFav {
+        position: absolute;
+        
+        //z-index: 1;
+        width: 260px;
+        height: 200px;
+        display: flex;
+        justify-content: end;
+        transition: all 500ms ease-out;
+        opacity: 0;
+        //visibility: hidden;
+
+        
+    
+        .found {
+            margin-right: 10px;
+            width: 40px;
+            height: 32px;
+        }
+        .favActive{
+            background: #FFFFFF;
+            border-radius: 6px;
+            margin-top: 10px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            margin-right: 14px;
+            .locfav{
+            width: 18px;
+            height: 15.9px;
+            margin: auto;
+    
+            }
+      
+        }
+        
+
+
+
+
+    
+}
+
+
+.dataFav {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 110px;
+    text-align: left;
+    margin-left: 12px;
+    width: 234px;
+    height: 73px;
+    font-size: 15px;
+    //height: auto;
+    font-family: 'Roboto', sans-serif;
+    //background-color: yellow;
+    //z-index: 1;
+    color: white;
+    opacity: 0;
+    //visibility: hidden;
+    transition: all 500ms ease-out;
+
+}
+
+
+#mas {
+
+    visibility: hidden;
+    width: 127px;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid #572EE5;
+    font-weight: bold;
+    margin-top: 3.1%;
+    margin-bottom: 3.1%;
+    align-self: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+
+    background-color: white;
+    color: blue;
+    text-transform: uppercase;
+}
+
+.favActive:hover {
+    transform: translate(1px, -2px);
+}
+
+.frameFav:hover .iconsFav{
+    //z-index: -1;
+    opacity: 0.7;
+    visibility: visible;
+    background-color:blue;
+    
+}
+.frameFav:hover .dataFav{
+    opacity: 1;
+    visibility: visible;
+}
+
+.options{
+    font-family: 'Roboto', sans-serif;
+}
+
+.options:hover{
+    background-color: blue;
+    color: white;
+    transition: all 500ms ease;
+}
+
+// SECCION PRINCIPAL DE "CREAR GIFOS.HTML" ESTILOS DEL AREA DE VIDEO
+
+#contenedorPrincipal {
+    display: flex;
+    width: 100%;
+    height: auto;
+    //background-color: yellow;
+    justify-content: center;
+
+}
+
+#imagenCamara {
+    display: flex;
+    align-items: center;
+    height: 550px;
+    margin-right: -6%;
+
+}
+
+#camara {
+    width: 150px;
+    height: 163px;
+}
+
+#cintaChica {
+    position: absolute;
+    margin-top: -85px;
+    width: 50px;
+    height: 72px;
+}
+
+#cintaGrande {
+    margin-top: -100px;
+    margin-left: 50px;
+    position: absolute;
+    width: 80px;
+    height: 100px;
+}
+
+#luzCamara {
+    margin-top: -68px;
+    visibility: hidden;
+
+}
+
+
+
+#rolloCamara {
+    display: flex;
+    margin-left: 15px;
+    height: 515px;
+    //background-color: steelblue;
+    align-items: flex-end;
+}
+
+
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+@keyframes spinChica {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes spinGrande {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+.rodarChica {
+    transform-origin: 50%;
+    animation: 3s spinChica linear infinite;
+}
+
+.rodarGrande {
+    transform-origin: 50%;
+
+    animation: 3s spinGrande linear infinite;
+}
+
+.blinkear {
+    animation: blink 1ms steps(5, start) infinite;
+}
+
+.loader {
+    transform-origin: 50%;
+    animation: 3s spinChica linear infinite;
+}
+
+
+
+#videocont {
+
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 688px;
+    height: 390px;
+    margin: auto;
+    margin-top: 60px;
+    //background-color: powderblue;
+
+    video {
+        //display: flex;
+        //position: absolute;
+        //margin-top: 35px;
+        width: 480px;
+        height: 320px;
+        //background-color: red;
+
+    }
+
+    #esperando {
+        width: 480px;
+        height: 320px;
+        background-color: #572EE5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        opacity: 0.6;
+        visibility: hidden;
+    }
+
+
+
+
+
+    #botones {
+        align-self: flex-end;
+        position: absolute;
+        margin-top: -55%;
+        margin-right: 7px;
+        width: 80px;
+        height: 40px;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .btn:hover {
+        background-image: url(/images/icon-download-hover.svg);
+
+    }
+
+    .link:hover {
+        background-image: url(/images/icon-link-hover.svg);
+    }
+
+    #msjespera {
+        font-family: 'Montserrat', sans-serif;
+
+        color: white;
+        font-size: 15px;
+
+    }
+
+    #lineasTexto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+        position: absolute;
+
+        //background-color: peru;
+
+    }
+
+    #txtLineaUno {
+        margin: auto;
+        margin-bottom: 5px;
+        text-align: center;
+        font-family: var(--primary-font);
+        color: #572EE5;
+        font-size: 25px;
+        font-weight: bold;
+        visibility: visible;
+        //background-color: rosybrown;
+
+    }
+
+    #txtLineaDos {
+        margin: auto;
+        text-align: center;
+        font-family: var(--primary-font);
+        color: #572EE5;
+        font-size: 25px;
+        font-weight: bold;
+        visibility: visible;
+        //background-color: plum;
+
+        #palabraGifos {
+            color: #50E3C2;
+        }
+    }
+
+
+    #txtLineaTres {
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        color: black;
+        size: 16px;
+        //background-color: hotpink;
+    }
+
+    #txtLineaCuatro {
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        color: black;
+        margin-top: -10px;
+        size: 16px;
+        //background-color:yellow;
+
+    }
+
+}
+
+#pasos {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+        border-radius: 100%;
+        border: 1px blue;
+        font-family: 'Roboto', sans-serif;
+        justify-content: center;
+        align-items: center;
+        border-style: inset;
+        width: 32px;
+        height: 32px;
+        size: 18px;
+        display: inline-flex;
+        color: blue;
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+
+
+}
+
+#cronometro {
+    display: flex;
+    align-self: center;
+    justify-content: left;
+    font-family: var(--primary-font);
+    border: 1px black;
+    color: #572EE5;
+    font-size: 16px;
+    width: 8.1%;
+    height: 2.8%;
+    margin-left: 70%;
+    margin-top: -40px;
+    text-align: center;
+    visibility: hidden;
+
+}
+
+#repetir {
+    display: flex;
+    align-self: center;
+    font-family: var(--primary-font);
+    font-size: 13px;
+    width: 131px;
+    height: 16px;
+    margin-left: 66.3%;
+    margin-top: -40px;
+    text-align: center;
+    border: 1px black;
+    color: #572EE5;
+
+
+
+
+}
+
+#barra {
+    border: 1px black;
+    background-color: blue;
+    width: 795.9px;
+    height: 6.9px;
+    margin: auto;
+    border-radius: 10px;
+
+}
+
+#btncomenzar {
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    width: 127px;
+    height: 50px;
+    font-family: var(--primary-font);
+    size: 13px;
+    margin-top: 20px;
+    //margin-left: 45%;
+    margin-left: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+
+
+}
+
+#btncomenzar:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
+#grabar {
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    width: 127px;
+    height: 50px;
+    font-family: var(--primary-font);
+    size: 13px;
+    margin-top: -67px;
+    visibility: hidden;
+
+    //margin-left: 45%;
+    margin-left: 45.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+
+
+}
+
+#detener {
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    width: 127px;
+    height: 50px;
+    font-family: var(--primary-font);
+    size: 13px;
+    margin-top: -50px;
+    visibility: hidden;
+
+    //margin-left: 45%;
+    margin-left: 45.1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+
+
+}
+
+#subir {
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    width: 127px;
+    height: 50px;
+    font-family: var(--primary-font);
+    size: 13px;
+    margin-top: -49px;
+    visibility: hidden;
+
+    //margin-left: 45%;
+    margin-left: 45.1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+
+
+}
+
+#cronos {
+    background-color: burlywood;
+    color: crimson;
+    border: 1px black;
+}
+
+#rewind {
+
+    //border: 1px solid #572EE5;
+    width: fit-content;
+    height: fit-content;
+    font-family: var(--primary-font);
+    font-size: 13px;
+    margin-top: -35px;
+    visibility: hidden;
+    margin-left: 66.1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    cursor: pointer;
+
+}
+
+#emergente {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    //align-items: center;
+    position: fixed;
+    width: 40%;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid blue;
+    margin-top: 190px;
+    z-index: 5;
+    //transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+#titCompartir{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 10px;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;    
+}
+#texto {
+    display: flex;
+    width: 95%;
+    height: auto;
+    //justify-content: center;
+    align-self: center;
+    align-items: flex-start;
+    
+
+}
+
+#cajaVinculo {
+    flex-grow: 3;
+    
+    border: solid 1px aqua;
+}
+
+#copiar {
+    flex-grow: 0;
+    border: aquamarine;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+
+
+
+
+#tituloEmergente {
+    display: inline-flex;
+    width: 100%;
+    height: 40%;
+
+    //background-color: brown;
+    justify-content: space-between;
+    align-items: center;
+
+    
+}
+
+#btnCerrar{
+    border: solid white;
+    background-color:antiquewhite;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#btnCerrar:hover{
+    transform: translate(0px, -2px);
+}
+
+
+#capa{
+    background-color:black;
+    opacity: 0.8;
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -4;
+    //visibility: hidden;
+    
+}
+#copiar:hover{
+    transform: translate(0px, -1px);
+    background-color: blue;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+//-------------------------MAIN AREA DE MIS GIFOS--------------//
+
+#muestraMisGifos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#areaSinGifos{
+    position: relative;
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    color: #50E3C2;
+}
+
+#imgSinGifos{
+    width: 150px;
+    height: 150px;
+
+}
+
+.btnMisGifos{
+    width: 32px;
+    height:32px;
+}
+
+
+.gifhtml{
+    color:#9CAFC3;
+}
+
+
+
+
 
 
 /****ESTILO CARRUSEL MODO NOCTURNO**////

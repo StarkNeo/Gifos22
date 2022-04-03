@@ -1,5 +1,5 @@
 
-let api_key = "9oiuzjrmvyyPsuoPNGd28OmEdO0oL40H";
+let api_key_Carr = "9oiuzjrmvyyPsuoPNGd28OmEdO0oL40H";
 let gifBid = 'https://api.giphy.com/v1/gifs'; //OBTENER GIFS BY ENDPOINTS
 let uri = "https://api.giphy.com/v1/gifs/trending";//ENDPOINT PARA GIF TRENDING
 
@@ -21,7 +21,7 @@ let trending = [];//arreglo para almacenar los gifos trending
 
 function giphy() {
 
-    fetch(uri + "?api_key=" + api_key + "&limit=12")
+    fetch(uri + "?api_key=" + api_key_Carr + "&limit=12")
         .then(response => response.json())
         .then(json => {
             console.log(json);
@@ -212,7 +212,7 @@ document.addEventListener('click', e => {
 document.addEventListener('click', e => {
     if (e.target.classList.contains('down') || e.target.classList.contains('sdown')) {
         console.log(e.target.id)
-        fetch(gifBid + '?ids=' + e.target.id + '&api_key=' + api_key)
+        fetch(gifBid + '?ids=' + e.target.id + '&api_key=' + api_key_Carr)
             .then(response => response.json())
             .then(blob => {
                 let urlElemento = blob.data[0].images.original.url;

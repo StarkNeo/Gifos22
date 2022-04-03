@@ -1,3 +1,5 @@
+document.getElementById('logo').addEventListener('click',()=> open('/index.html','_self'));
+//document.getElementById('boton_gifo').addEventListener('click',()=>open('/crearGifo.html','_self'));
 
 //VARIABLES PARA ESTILO DE BOTONES Y PASOS
 let iniciar = document.getElementById('btncomenzar');

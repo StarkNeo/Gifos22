@@ -263,6 +263,8 @@ p {
   cursor: pointer;
   width: 20px;
   height: 20px;
+  background-image: url(/images/icon-search.svg);
+  background-repeat: no-repeat;
 }
 
 #busqueda #buscador #inputLine #iconoLupa {
@@ -271,6 +273,8 @@ p {
   visibility: hidden;
   width: 20px;
   height: 20px;
+  background-image: url(/images/icon-search.svg);
+  background-repeat: no-repeat;
 }
 
 #busqueda #buscador .container {
