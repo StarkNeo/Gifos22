@@ -12,23 +12,23 @@ let titulo = document.getElementById('tibus');
 //window.onload = giphy();
 
 
-  //  if (!localStorage.getItem('favoritos')) {
-    //    localStorage.setItem('favoritos', '[]');
-    
-    //}
-    //let favoritos = JSON.parse(localStorage.getItem('favoritos'));
-    //console.log(favoritos);
-    jsonE = favoritos.length;    
+//  if (!localStorage.getItem('favoritos')) {
+//    localStorage.setItem('favoritos', '[]');
+
+//}
+//let favoritos = JSON.parse(localStorage.getItem('favoritos'));
+//console.log(favoritos);
+jsonE = favoritos.length;
 
 
 
-window.onload = cargarStorage();    
+window.onload = cargarStorage();
 
 
 //-----SECCION CON FUNCIONES PARA CARGAR LOS GIFOS FAVORITOS ALMACENADOS EN EL LOCALSTORAGE-----
 
 function cargarStorage() {
-    
+
     console.log('el arreglo json contiene: ' + jsonE)
     //en caso de que no haya GIFOS almacenados en el storage
     if (jsonE === 0) {
@@ -44,16 +44,16 @@ function cargarStorage() {
         `;
     }
 
-//si los GIFOS almacenados son menos de 12 entonces cargarlos y no mostrar el boton VER MAS
+    //si los GIFOS almacenados son menos de 12 entonces cargarlos y no mostrar el boton VER MAS
 
-if (jsonE <= p) {
-    console.log('todos los elementos caben en una grilla');
-    for (j = 0; j < jsonE; j++) {
+    if (jsonE <= p) {
+        console.log('todos los elementos caben en una grilla');
+        for (j = 0; j < jsonE; j++) {
 
-        //console.log(json.data[j]);
-        let imgres = document.createElement('div');
-        imgres.innerHTML =
-            `
+            //console.log(json.data[j]);
+            let imgres = document.createElement('div');
+            imgres.innerHTML =
+                `
                 <div class='frameFav'>
 
                     <img class='giFav' src="${favoritos[j].urlImagen}" alt="">
@@ -73,30 +73,30 @@ if (jsonE <= p) {
                      </div>
                 </div>
                 `
-        pintar.appendChild(imgres);
+            pintar.appendChild(imgres);
+
+        }
 
     }
+    //si los GIFOS almacenados son mas de 12 entonces cargarlos y mostrar el boton VER MAS
+    else {
+        btnmas.textContent = 'Ver Mas';
+        btnmas.style.visibility = 'visible';
 
-}
-//si los GIFOS almacenados son mas de 12 entonces cargarlos y mostrar el boton VER MAS
-else {
-     btnmas.textContent = 'Ver Mas';
-    btnmas.style.visibility = 'visible';
-
-    for (j = 0; j < p; j++) {
-        //console.log(json.data[j]);
-        let imgres = document.createElement('div');
-        imgres.innerHTML =
-            `
+        for (j = 0; j < p; j++) {
+            //console.log(json.data[j]);
+            let imgres = document.createElement('div');
+            imgres.innerHTML =
+                `
             <div class='frameFav'>
 
             <img class='giFav' src="${favoritos[j].urlImagen}" alt="">
 
             <div class='iconsFav'>
                 <div class='favActive'><img id='${favoritos[j].id}' class='locfav' src='/images/icon-fav-active.svg' alt=""></div>
-                    <img id='${favoritos[j].id}' class='found sdown' src='/images/icon-download.svg' alt="">
-                    <img id='${favoritos[j].urlImagen}' class='found smax' src='/images/icon-max-normal.svg' alt="">
-                </div>
+                <div class='favActive'><img id='${favoritos[j].id}' class='found sdown' src='/images/icon-download.svg' alt=""></div>
+                <div class='favActive'><img id='${favoritos[j].urlImagen}' class='found smax' src='/images/icon-max-normal.svg' alt=""></div>          
+            </div>
 
                 <div class='dataFav'>
                     <p>${favoritos[j].usuario}<br>
@@ -107,28 +107,28 @@ else {
              </div>
         </div>
                 `
-        pintar.appendChild(imgres);
+            pintar.appendChild(imgres);
 
 
-    }
-//cargar mas GIFOS conforme se presiona el botono VER MAS
-    btnmas.addEventListener('click', () => {
-        let r = (jsonE - p) / 12;
-        if (r >= 1) {
-            p += 12;
-            for (j; j < p; j++) {
-                let imgres = document.createElement('div');
-                imgres.innerHTML =
-                    `
+        }
+        //cargar mas GIFOS conforme se presiona el botono VER MAS
+        btnmas.addEventListener('click', () => {
+            let r = (jsonE - p) / 12;
+            if (r >= 1) {
+                p += 12;
+                for (j; j < p; j++) {
+                    let imgres = document.createElement('div');
+                    imgres.innerHTML =
+                        `
                     <div class='frameFav'>
 
                     <img class='giFav' src="${favoritos[j].urlImagen}" alt="">
 
                     <div class='iconsFav'>
-                        <div class='favActive'><img id='${favoritos[j].id}' class='locfav' src='/images/icon-fav-active.svg' alt=""></div>
-                            <img id='${favoritos[j].id}' class='found sdown' src='/images/icon-download.svg' alt="">
-                            <img id='${favoritos[j].urlImagen}' class='found smax' src='/images/icon-max-normal.svg' alt="">
-                        </div>
+                     <div class='favActive'><img id='${favoritos[j].id}' class='locfav' src='/images/icon-fav-active.svg' alt=""></div>
+                     <div class='favActive'><img id='${favoritos[j].id}' class='found sdown' src='/images/icon-download.svg' alt=""></div>
+                     <div class='favActive'><img id='${favoritos[j].urlImagen}' class='found smax' src='/images/icon-max-normal.svg' alt=""></div>
+                    </div>
 
                         <div class='dataFav'>
                             <p>${favoritos[j].usuario}<br>
@@ -139,24 +139,24 @@ else {
                      </div>
                 </div>
                 `
-                pintar.appendChild(imgres);
+                    pintar.appendChild(imgres);
 
+                }
             }
-        }
-        else {
-            p += jsonE - p;
-            for (j; j < p; j++) {
-                let imgres = document.createElement('div');
-                imgres.innerHTML =
-                    `
-                    <div class='framegif'>
+            else {
+                p += jsonE - p;
+                for (j; j < p; j++) {
+                    let imgres = document.createElement('div');
+                    imgres.innerHTML =
+                        `
+                    <div class='frameFav'>
 
                     <img class='giFav' src="${favoritos[j].urlImagen}" alt="">
 
                     <div class='iconsFav'>
-                        <div class='favActive'><img id='${favoritos[j].id}' class='locfav' src='/images/icon-fav-active.svg' alt=""></div>
-                            <img id='${favoritos[j].id}' class='found sdown' src='/images/icon-download.svg' alt="">
-                            <img id='${favoritos[j].urlImagen}' class='found smax' src='/images/icon-max-normal.svg' alt="">
+                    <div class='favActive'><img id='${favoritos[j].id}' class='locfav' src='/images/icon-fav-active.svg' alt=""></div>
+                    <div class='favActive'><img id='${favoritos[j].id}' class='found sdown' src='/images/icon-download.svg' alt=""></div>
+                    <div class='favActive'><img id='${favoritos[j].urlImagen}' class='found smax' src='/images/icon-max-normal.svg' alt=""></div>
                         </div>
 
                         <div class='dataFav'>
@@ -168,15 +168,15 @@ else {
                      </div>
                 </div>
                 `
-                pintar.appendChild(imgres);
-                btnmas.style.visibility = 'hidden';
+                    pintar.appendChild(imgres);
+                    btnmas.style.visibility = 'hidden';
 
+                }
             }
-        }
 
 
-    })
-}
+        })
+    }
 
 
 }
@@ -301,20 +301,20 @@ document.addEventListener('click', e => {
 //ALGORITMO PARA BOTON ELIMINAR GIFO DEL STORAGE DE FAVORITOS
 
 document.addEventListener('click', e => {
-//actua sobre el div que contiene al corazon
+    //actua sobre el div que contiene al corazon
     if (e.target.className === 'favActive') {
         console.log('el elemento es sujeto de estraccion')
         let hijo = e.target.childNodes[0];
-        let hijoevaluado=hijo.id;
+        let hijoevaluado = hijo.id;
         let hijoBorrado = favoritos.findIndex(gifo => gifo.id === hijoevaluado);
         console.log(hijoBorrado);
         favoritos.splice(hijoBorrado, 1);
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
         console.log(localStorage);
-        
+
 
     }
-//actua sobre la imagen del corazon
+    //actua sobre la imagen del corazon
     if (e.target.classList.contains('locfav')) {
         console.log('eres todo un pro');
         let evaluado = e.target.id;
@@ -362,5 +362,5 @@ function giphy() {
 
 //window.onload=giphy();
 
-document.getElementById('logo').addEventListener('click',()=> open('/index.html','_self'));
-document.getElementById('boton_gifo').addEventListener('click',()=>open('/crearGifo.html','_self'));
+document.getElementById('logo').addEventListener('click', () => open('/index.html', '_self'));
+document.getElementById('boton_gifo').addEventListener('click', () => open('/crearGifo.html', '_self'));

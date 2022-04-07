@@ -415,7 +415,7 @@ header nav #boton_gifo:hover {
 #storageFav #pfav {
   font-family: var(--primary-font);
   font-size: 35px;
-  color: #572EE5;
+  color: white;
   line-height: 50px;
   width: 44.9%;
   height: 6.6%;

@@ -28,22 +28,34 @@ fetch(urisug + "?api_key=" + api_key)
     .then(response => response.json())
     .then(json => {
         let arrayTopic = json.data;
-
-        for (let index = 0; index < 5; index++) {
-            if (index === 4) {
-                let wordStrong = document.createElement('strong');
-                wordStrong.setAttribute('class', 'wordStrong');
-                wordStrong.innerHTML = arrayTopic[index] + ' ';
-                topicTren.appendChild(wordStrong);
+        console.log(json.data);
+        console.log("las palabras trending son:"+arrayTopic);
+        for (let o = 0; o < 5; o++) {
+            if (o === 4) {
+                
+                //let wordStrong = document.createElement('strong');
+                //wordStrong.setAttribute('class', 'wordStrong');
+                //wordStrong.innerHTML = arrayTopic[o] + ' ';
+                //topicTren.appendChild(wordStrong);
+                //topicTren.innerHTML+=json.data[o]+ ' ';
+                let gongon = document.createElement('span');
+                gongon.setAttribute('class', 'wordStrong');
+                gongon.innerHTML = arrayTopic[o] + ' ';
+                topicTren.appendChild(gongon);
 
             }
             else {
-                let wordStrong = document.createElement('strong');
-                wordStrong.setAttribute('class', 'wordStrong');
-                wordStrong.innerHTML = arrayTopic[index] + ', ';
-                topicTren.appendChild(wordStrong);
-
-
+                
+                //let wordStrong = document.createElement('strong');
+                //wordStrong.setAttribute('class', 'wordStrong');
+                //wordStrong.innerHTML = arrayTopic[o] + ', ';
+                //topicTren.appendChild(wordStrong);
+                //console.log(wordStrong);
+                //topicTren.innerHTML+=json.data[o]+ ', ';
+                let gongon = document.createElement('span');
+                gongon.setAttribute('class', 'wordStrong');
+                gongon.innerHTML = arrayTopic[o] + ' ';
+                topicTren.appendChild(gongon);
             }
 
         }

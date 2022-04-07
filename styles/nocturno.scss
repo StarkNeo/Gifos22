@@ -41,7 +41,7 @@ header {
     height: 5.9%;
     //border-top: 6px solid blue;
     display: flex;
-    
+        
 
     #logo {
         align-items: center;
@@ -274,7 +274,7 @@ header {
         color: white;
         text-align: center;
         line-height: 25px;
-
+        //width: fit-content;
         position: relative;
 
         #trendingEnfasis {
@@ -438,7 +438,7 @@ header {
 #pfav {
         font-family: var(--primary-font);
         font-size: 35px;
-        color: #572EE5;
+        color: white;
         line-height: 50px;
         width: 44.9%;
         height: 6.6%;
