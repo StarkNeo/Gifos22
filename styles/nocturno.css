@@ -374,22 +374,6 @@ header nav #boton_gifo:hover {
   opacity: 1;
 }
 
-#busqueda #mas {
-  visibility: hidden;
-  width: 127px;
-  height: 50px;
-  border-radius: 25px;
-  font-weight: bold;
-  margin-top: 3.1%;
-  margin-bottom: 3.1%;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  text-transform: uppercase;
-}
-
 #storageFav {
   position: relative;
   margin-top: 5%;
@@ -435,6 +419,7 @@ header nav #boton_gifo:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 109.3px;
+  margin: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -550,7 +535,7 @@ header nav #boton_gifo:hover {
   width: 127px;
   height: 50px;
   border-radius: 25px;
-  border: 1px solid #572EE5;
+  border: 1px solid white;
   font-weight: bold;
   margin-top: 3.1%;
   margin-bottom: 3.1%;
@@ -559,9 +544,15 @@ header nav #boton_gifo:hover {
       align-self: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-  background-color: white;
-  color: blue;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
   text-transform: uppercase;
+}
+
+#mas:hover {
+  background-color: white;
+  color: black;
 }
 
 .favActive:hover {
@@ -614,23 +605,28 @@ header nav #boton_gifo:hover {
 }
 
 #camara {
-  width: 150px;
-  height: 163px;
+  width: 183px;
+  height: 200px;
+  margin-top: -67px;
+  z-index: 0;
 }
 
 #cintaChica {
   position: absolute;
-  margin-top: -85px;
-  width: 50px;
+  margin-top: -84px;
+  width: 60px;
   height: 72px;
+  margin-left: 15px;
+  z-index: 1;
 }
 
 #cintaGrande {
-  margin-top: -100px;
-  margin-left: 50px;
+  margin-top: -94px;
+  margin-left: 75px;
   position: absolute;
   width: 80px;
   height: 100px;
+  z-index: 1;
 }
 
 #luzCamara {
@@ -732,7 +728,7 @@ header nav #boton_gifo:hover {
 }
 
 #videocont {
-  border: 1px solid blue;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -833,7 +829,7 @@ header nav #boton_gifo:hover {
   margin-bottom: 5px;
   text-align: center;
   font-family: var(--primary-font);
-  color: #572EE5;
+  color: white;
   font-size: 25px;
   font-weight: bold;
   visibility: visible;
@@ -843,7 +839,7 @@ header nav #boton_gifo:hover {
   margin: auto;
   text-align: center;
   font-family: var(--primary-font);
-  color: #572EE5;
+  color: white;
   font-size: 25px;
   font-weight: bold;
   visibility: visible;
@@ -856,14 +852,14 @@ header nav #boton_gifo:hover {
 #videocont #txtLineaTres {
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  color: black;
+  color: white;
   size: 16px;
 }
 
 #videocont #txtLineaCuatro {
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  color: black;
+  color: white;
   margin-top: -10px;
   size: 16px;
 }
@@ -883,7 +879,7 @@ header nav #boton_gifo:hover {
 
 #pasos h3 {
   border-radius: 100%;
-  border: 1px blue;
+  border: 1px white;
   font-family: 'Roboto', sans-serif;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -898,7 +894,7 @@ header nav #boton_gifo:hover {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  color: blue;
+  color: white;
   margin-right: 16px;
   margin-left: 16px;
 }
@@ -914,7 +910,7 @@ header nav #boton_gifo:hover {
           justify-content: left;
   font-family: var(--primary-font);
   border: 1px black;
-  color: #572EE5;
+  color: white;
   font-size: 16px;
   width: 8.1%;
   height: 2.8%;
@@ -938,12 +934,12 @@ header nav #boton_gifo:hover {
   margin-top: -40px;
   text-align: center;
   border: 1px black;
-  color: #572EE5;
+  color: white;
 }
 
 #barra {
   border: 1px black;
-  background-color: blue;
+  background-color: white;
   width: 795.9px;
   height: 6.9px;
   margin: auto;
@@ -951,14 +947,14 @@ header nav #boton_gifo:hover {
 }
 
 #btncomenzar {
-  border: 1px solid #572EE5;
+  border: 1px solid white;
   border-radius: 25px;
   width: 127px;
   height: 50px;
   font-family: var(--primary-font);
   size: 13px;
   margin-top: 20px;
-  margin-left: 45%;
+  margin-left: 42%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -968,16 +964,17 @@ header nav #boton_gifo:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: blue;
+  color: white;
 }
 
 #btncomenzar:hover {
-  color: yellow;
+  color: black;
+  background-color: white;
   cursor: pointer;
 }
 
 #grabar {
-  border: 1px solid #572EE5;
+  border: 1px solid white;
   border-radius: 25px;
   width: 127px;
   height: 50px;
@@ -985,7 +982,8 @@ header nav #boton_gifo:hover {
   size: 13px;
   margin-top: -67px;
   visibility: hidden;
-  margin-left: 45.2%;
+  cursor: pointer;
+  margin-left: 42.2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -995,11 +993,17 @@ header nav #boton_gifo:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: blue;
+  color: white;
+  background-color: transparent;
+}
+
+#grabar:hover {
+  background-color: white;
+  color: black;
 }
 
 #detener {
-  border: 1px solid #572EE5;
+  border: 1px solid white;
   border-radius: 25px;
   width: 127px;
   height: 50px;
@@ -1007,7 +1011,8 @@ header nav #boton_gifo:hover {
   size: 13px;
   margin-top: -50px;
   visibility: hidden;
-  margin-left: 45.1%;
+  cursor: pointer;
+  margin-left: 42.1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1017,11 +1022,17 @@ header nav #boton_gifo:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: blue;
+  color: white;
+  background-color: transparent;
+}
+
+#detener:hover {
+  background-color: white;
+  color: black;
 }
 
 #subir {
-  border: 1px solid #572EE5;
+  border: 1px solid white;
   border-radius: 25px;
   width: 127px;
   height: 50px;
@@ -1029,7 +1040,8 @@ header nav #boton_gifo:hover {
   size: 13px;
   margin-top: -49px;
   visibility: hidden;
-  margin-left: 45.1%;
+  cursor: pointer;
+  margin-left: 42.1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1039,7 +1051,13 @@ header nav #boton_gifo:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: blue;
+  color: white;
+  background-color: transparent;
+}
+
+#subir:hover {
+  background-color: white;
+  color: black;
 }
 
 #cronos {
@@ -1069,7 +1087,7 @@ header nav #boton_gifo:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: blue;
+  color: white;
   cursor: pointer;
 }
 

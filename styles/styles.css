@@ -449,6 +449,7 @@ p {
       align-self: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
+  cursor: pointer;
   background-color: white;
   color: blue;
   text-transform: uppercase;
@@ -499,6 +500,7 @@ p {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 109.3px;
+  margin: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1065,7 +1067,7 @@ p {
   font-family: var(--primary-font);
   size: 13px;
   margin-top: 20px;
-  margin-left: 45%;
+  margin-left: 42%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1079,7 +1081,8 @@ p {
 }
 
 #btncomenzar:hover {
-  color: yellow;
+  color: white;
+  background-color: blue;
   cursor: pointer;
 }
 
@@ -1092,7 +1095,7 @@ p {
   size: 13px;
   margin-top: -67px;
   visibility: hidden;
-  margin-left: 45.2%;
+  margin-left: 42.2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1103,6 +1106,11 @@ p {
       -ms-flex-align: center;
           align-items: center;
   color: blue;
+}
+
+#grabar:hover {
+  background-color: blue;
+  color: white;
 }
 
 #detener {
@@ -1114,7 +1122,7 @@ p {
   size: 13px;
   margin-top: -50px;
   visibility: hidden;
-  margin-left: 45.1%;
+  margin-left: 42.1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1127,6 +1135,12 @@ p {
   color: blue;
 }
 
+#detener:hover {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
 #subir {
   border: 1px solid #572EE5;
   border-radius: 25px;
@@ -1136,7 +1150,8 @@ p {
   size: 13px;
   margin-top: -49px;
   visibility: hidden;
-  margin-left: 45.1%;
+  cursor: pointer;
+  margin-left: 42.1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1147,6 +1162,11 @@ p {
       -ms-flex-align: center;
           align-items: center;
   color: blue;
+}
+
+#subir:hover {
+  background-color: blue;
+  color: white;
 }
 
 #cronos {

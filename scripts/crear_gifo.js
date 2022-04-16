@@ -82,12 +82,7 @@ function grabarVideo(mediaStream) {
     repetirVideo(recorder);
 
   })
-  //areavideo.srcObject = mediaStream;
-  //areavideo.play();
-  //areavideo.onloadedmetadata = function () { areavideo.play(); }
-
-  //btngrabar(recorder);
-  //return recorder;
+  
 }
 
 
@@ -95,13 +90,19 @@ function grabarVideo(mediaStream) {
 
 //ESTILO DE BOTONES Y TEXTO QUE SE ACTIVA AL PRESIONAR COMENZAR
 let pasoUno = () => {
-  pasos[0].style.backgroundColor = 'blue';
-  pasos[0].style.color = 'white';
-  //let linea_uno = document.getElementsByClassName('titulos');
-  //let txtDos=document.getElementById('txtLineaDos');
+
+  if (vista==='modoNoc') {
+    pasos[0].style.backgroundColor = 'white';
+    pasos[0].style.color = 'blue';
+      
+  }
+  else{
+    pasos[0].style.backgroundColor = 'blue';
+    pasos[0].style.color = 'white';
+  }
+  
   txtLineaUno.textContent = "¿Nos das acceso";
   txtLineaDos.textContent = "a tu camara?";
-  //let linea_dos = document.getElementsByClassName('subtit');
   txtLineaTres.textContent = "El acceso a tu camara será válido sólo";
   txtLineaCuatro.textContent = "por el tiempo en el que estés creando el GIFO";
   activarCamara();
@@ -109,22 +110,17 @@ let pasoUno = () => {
 
 //ESTILO DE LOS BOTONES Y TEXTO QUE SE APLICA SI EL USUARIO NO PERMITE ACCESO O BLOQUEA LA CAMARA
 let pasoNulo = () => {
+  
   pasos[0].style.backgroundColor = 'white';
   pasos[0].style.color = 'blue';
-  //let linea_uno = document.getElementsByClassName('titulos');
-
   txtLineaUno.textContent = "Aquí podrás";
   txtLineaDos.textContent = "crear tus propios GIFOS";
-  //let linea_dos = document.getElementsByClassName('subtit');
   txtLineaTres.textContent = "¡Crea tu GIFO en sólo 3 pasos!";
   txtLineaCuatro.textContent = "(sólo necesitas una cámara para grabar un video)";
   alert('se necesita acceso a tu camara');
 }
 
 let pasoDos = () => {
-  //let titulos = document.getElementsByClassName('titulos');
-  //let subtitulos = document.getElementsByClassName('subtit');
-
   luzCamara.style.visibility = 'visible';
   txtLineaUno.style.visibility = 'hidden';
   txtLineaDos.style.visibility = 'hidden';
@@ -133,10 +129,20 @@ let pasoDos = () => {
 
 
   if (block === 1) {
-    pasos[1].style.backgroundColor = 'blue';
-    pasos[1].style.color = 'white';
-    pasos[0].style.background = 'white';
-    pasos[0].style.color = 'blue';
+    if (vista==='modoNoc') {
+      pasos[1].style.backgroundColor = 'white';
+      pasos[1].style.color = 'blue';
+      pasos[0].style.background = 'white';
+      pasos[0].style.color = 'blue';
+        
+    }
+    else{
+      pasos[1].style.backgroundColor = 'blue';
+      pasos[1].style.color = 'white';
+      pasos[0].style.background = 'white';
+      pasos[0].style.color = 'blue';
+    }
+    
     iniciar.style.visibility = 'hidden';
     grabar.style.visibility = 'visible';
     grabar.style.cursor = 'pointer';
@@ -150,12 +156,19 @@ let pasoDos = () => {
 }
 
 let pasoTres = () => {
+  
   pasos[0].style.backgroundColor = 'white';
   pasos[0].style.color = 'blue';
   pasos[1].style.background = 'white';
   pasos[1].style.color = 'blue';
-  pasos[2].style.background = 'blue';
-  pasos[2].style.color = 'white';
+  if (vista==='modoNoc') {
+    pasos[2].style.background = 'white';
+    pasos[2].style.color = 'blue';  
+  } else {
+    pasos[2].style.background = 'blue';
+    pasos[2].style.color = 'white';  
+  }
+  
 }
 
 var btndetenido = 0;

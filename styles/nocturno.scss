@@ -391,24 +391,6 @@ header {
     }
 
 
-    #mas {
-
-        visibility: hidden;
-        width: 127px;
-        height: 50px;
-        border-radius: 25px;
-        //border: 1px solid #572EE5;
-        font-weight: bold;
-        margin-top: 3.1%;
-        margin-bottom: 3.1%;
-        align-self: center;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 13px;
-
-        // background-color: white;
-        //color: blue;
-        text-transform: uppercase;
-    }
 
 
 
@@ -456,7 +438,7 @@ header {
     height: auto;
     flex-direction: column;
     margin-top: 109.3px;
-   
+   margin: auto;
     align-items: center;
 
     #msjsinFav {
@@ -578,19 +560,23 @@ header {
     width: 127px;
     height: 50px;
     border-radius: 25px;
-    border: 1px solid #572EE5;
+    border: 1px solid white;
     font-weight: bold;
     margin-top: 3.1%;
     margin-bottom: 3.1%;
     align-self: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
-
-    background-color: white;
-    color: blue;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
     text-transform: uppercase;
 }
 
+#mas:hover{
+    background-color: white;
+    color: black;
+}
 .favActive:hover {
     transform: translate(1px, -2px);
 }
@@ -625,6 +611,7 @@ header {
     height: auto;
     //background-color: yellow;
     justify-content: center;
+    
 
 }
 
@@ -633,27 +620,39 @@ header {
     align-items: center;
     height: 550px;
     margin-right: -6%;
+    
 
 }
 
 #camara {
-    width: 150px;
-    height: 163px;
+    //width: 183px;
+    //height: 180px;
+    //margin-top: -82px;
+    //margin-left: -23px;
+    width: 183px;
+    height: 200px;
+    margin-top: -67px;
+    
+    
+    z-index: 0;
 }
 
 #cintaChica {
     position: absolute;
-    margin-top: -85px;
-    width: 50px;
+    margin-top: -84px;
+    width: 60px;
     height: 72px;
+    margin-left: 15px;
+    z-index: 1;
 }
 
 #cintaGrande {
-    margin-top: -100px;
-    margin-left: 50px;
+    margin-top: -94px;
+    margin-left: 75px;
     position: absolute;
     width: 80px;
     height: 100px;
+    z-index: 1;
 }
 
 #luzCamara {
@@ -726,7 +725,7 @@ header {
 
 #videocont {
 
-    border: 1px solid blue;
+    border: 1px solid white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -816,7 +815,7 @@ header {
         margin-bottom: 5px;
         text-align: center;
         font-family: var(--primary-font);
-        color: #572EE5;
+        color: white;
         font-size: 25px;
         font-weight: bold;
         visibility: visible;
@@ -828,7 +827,7 @@ header {
         margin: auto;
         text-align: center;
         font-family: var(--primary-font);
-        color: #572EE5;
+        color: white;
         font-size: 25px;
         font-weight: bold;
         visibility: visible;
@@ -843,7 +842,7 @@ header {
     #txtLineaTres {
         text-align: center;
         font-family: 'Roboto', sans-serif;
-        color: black;
+        color: white;
         size: 16px;
         //background-color: hotpink;
     }
@@ -851,7 +850,7 @@ header {
     #txtLineaCuatro {
         text-align: center;
         font-family: 'Roboto', sans-serif;
-        color: black;
+        color: white;
         margin-top: -10px;
         size: 16px;
         //background-color:yellow;
@@ -868,7 +867,7 @@ header {
 
     h3 {
         border-radius: 100%;
-        border: 1px blue;
+        border: 1px white;
         font-family: 'Roboto', sans-serif;
         justify-content: center;
         align-items: center;
@@ -877,7 +876,7 @@ header {
         height: 32px;
         size: 18px;
         display: inline-flex;
-        color: blue;
+        color: white;
         margin-right: 16px;
         margin-left: 16px;
     }
@@ -891,7 +890,7 @@ header {
     justify-content: left;
     font-family: var(--primary-font);
     border: 1px black;
-    color: #572EE5;
+    color: white;
     font-size: 16px;
     width: 8.1%;
     height: 2.8%;
@@ -913,7 +912,7 @@ header {
     margin-top: -40px;
     text-align: center;
     border: 1px black;
-    color: #572EE5;
+    color: white;
 
 
 
@@ -922,7 +921,7 @@ header {
 
 #barra {
     border: 1px black;
-    background-color: blue;
+    background-color: white;
     width: 795.9px;
     height: 6.9px;
     margin: auto;
@@ -931,30 +930,31 @@ header {
 }
 
 #btncomenzar {
-    border: 1px solid #572EE5;
+    border: 1px solid white;
     border-radius: 25px;
     width: 127px;
     height: 50px;
     font-family: var(--primary-font);
     size: 13px;
     margin-top: 20px;
-    //margin-left: 45%;
-    margin-left: 45%;
+    
+    margin-left: 42%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: blue;
-
+    color: white;
+    
 
 }
 
 #btncomenzar:hover {
-    color: yellow;
+    color: black;
+    background-color: white;
     cursor: pointer;
 }
 
 #grabar {
-    border: 1px solid #572EE5;
+    border: 1px solid white;
     border-radius: 25px;
     width: 127px;
     height: 50px;
@@ -962,19 +962,24 @@ header {
     size: 13px;
     margin-top: -67px;
     visibility: hidden;
-
+    cursor: pointer;
     //margin-left: 45%;
-    margin-left: 45.2%;
+    margin-left: 42.2%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: blue;
+    color: white;
+    background-color: transparent;
 
 
 }
 
+#grabar:hover{
+    background-color: white;
+    color: black;
+}
 #detener {
-    border: 1px solid #572EE5;
+    border: 1px solid white;
     border-radius: 25px;
     width: 127px;
     height: 50px;
@@ -982,19 +987,24 @@ header {
     size: 13px;
     margin-top: -50px;
     visibility: hidden;
-
+    cursor: pointer;
     //margin-left: 45%;
-    margin-left: 45.1%;
+    margin-left: 42.1%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: blue;
+    color: white;
+    background-color: transparent;
 
 
 }
+#detener:hover{
+    background-color: white;
+    color: black;
+}
 
 #subir {
-    border: 1px solid #572EE5;
+    border: 1px solid white;
     border-radius: 25px;
     width: 127px;
     height: 50px;
@@ -1002,15 +1012,20 @@ header {
     size: 13px;
     margin-top: -49px;
     visibility: hidden;
-
+    cursor: pointer;
     //margin-left: 45%;
-    margin-left: 45.1%;
+    margin-left: 42.1%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: blue;
+    color: white;
+    background-color: transparent;
 
 
+}
+#subir:hover{
+    background-color: white;
+    color: black;
 }
 
 #cronos {
@@ -1032,7 +1047,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: blue;
+    color: white;
     cursor: pointer;
 
 }
