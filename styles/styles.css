@@ -25,8 +25,8 @@ header #logo {
 }
 
 header nav {
+  width: 100%;
   position: relative;
-  margin-left: 37.5%;
   margin-top: 1.5%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -37,7 +37,11 @@ header nav ul {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   padding-top: 5px;
+  width: 70%;
   height: 18px;
 }
 
@@ -62,18 +66,30 @@ header nav #boton_gifo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 54px;
+  min-width: 30%;
   height: 54px;
   border: none;
   border-radius: 100px;
   background-image: url(/images/button-crear-gifo.svg);
   background-repeat: no-repeat;
   border: none;
+  justify-items: flex-end;
 }
 
 header nav #boton_gifo:hover {
   background-image: url(/images/CTA-crear-gifo-hover.svg);
   background-repeat: no-repeat;
+}
+
+header nav #burger {
+  visibility: hidden;
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+  margin-left: -42%;
 }
 
 .modoNoc {
@@ -91,6 +107,33 @@ header nav #boton_gifo:hover {
 li:hover {
   width: auto;
   border-bottom: 2px solid #5ED7C6;
+}
+
+@media screen and (max-width: 600px) {
+  #boton_gifo {
+    visibility: hidden;
+  }
+  #burger {
+    visibility: visible;
+  }
+  .menu {
+    -webkit-transform: translate(-50%, 50px);
+            transform: translate(-50%, 50px);
+    -webkit-filter: brightness(110%);
+            filter: brightness(110%);
+    background-color: #572EE5;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+  }
+  ul {
+    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    color: white;
+  }
 }
 
 #fotindex {

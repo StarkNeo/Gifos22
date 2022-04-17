@@ -18,6 +18,7 @@ let txtLineaTres = document.getElementById('txtLineaTres');
 let txtLineaCuatro = document.getElementById('txtLineaCuatro');
 let areacrono = document.getElementById('cronometro');
 let areavideo = document.querySelector('video');
+let btnGifoActive=document.getElementById('boton_gifo');
 //OBJETO PARA CAPTURA DEL VIDEO
 let mediaobject = {
   audio: false,
@@ -90,6 +91,7 @@ function grabarVideo(mediaStream) {
 
 //ESTILO DE BOTONES Y TEXTO QUE SE ACTIVA AL PRESIONAR COMENZAR
 let pasoUno = () => {
+btnGifoActive.style.backgroundImage='url(/images/CTA-crear-gifo-active.svg)';
 
   if (vista==='modoNoc') {
     pasos[0].style.backgroundColor = 'white';
@@ -232,7 +234,6 @@ function detenerVideo(recorder) {
 
 
 iniciar.addEventListener('click', pasoUno);
-
 if (!localStorage.getItem('misGifos')) {
   localStorage.setItem('misGifos', '[]');
 
@@ -284,13 +285,13 @@ subir.addEventListener('click', () => {
       alert('Felicidades tu gifo se subio con exito!, ahora puedes consultarlo en la seccion MISGIFOS!');
       //console.log(idGifoSubido);
       localStorage.setItem('misGifos', JSON.stringify(misGifos));
-      //console.log(localStorage.misGifos);
-      /*
-     setTimeout(()=>{
-       location.reload();
+      if (vista==='modoNoc') {
+        btnGifoActive.style.backgroundImage='url(/images/CTA-crear-gifo-modo-noc.svg)';
+      } else {
+        btnGifoActive.style.backgroundImage='url(/images/button-crear-gifo.svg)';  
+      }
+      
 
-     },5000)
-     */
     }
 
     )

@@ -16,7 +16,7 @@ header {
     height: 5.9%;
     border-top: 6px solid blue;
     display: flex;
-
+    //background-color: yellow;
     
 
     #logo {
@@ -26,29 +26,32 @@ header {
         height: 59.1px;
         margin-left: 10.8%;
         margin-top: 1.5%;
-
-        
-
+        //background-color: #572EE5;
     }
 
+    
     nav {
+        width: 100%;
         position: relative;
-        margin-left: 37.5%;
-
+        //margin-left: 37.5%;
+        //margin-left: 35.5%;
         margin-top: 1.5%;
         display: flex;
+        //background-color: brown;
+        //justify-content: space-between;
 
 
         ul {
-            display: inline-flex;
-            padding-top: 5px;
             //background-color: #572EE5;
+            display: inline-flex;
+            justify-content: flex-end;
+            padding-top: 5px;
+            width: 70%;
             height: 18px;
 
             li {
                 @include menu();
                 display: inline-flex;
-
                 margin-right: 50px;
 
 
@@ -63,16 +66,20 @@ header {
         }
 
         #boton_gifo {
+            //background-color: white;
+            
             position: relative;
             display: flex;
-            width: 54px;
+            
+            //width: 54px;
+            min-width: 30%;
             height: 54px;
             border: none;
             border-radius: 100px;
             background-image: url(/images/button-crear-gifo.svg);
             background-repeat: no-repeat;
             border: none;
-
+            justify-items: flex-end;
             
         }
 
@@ -80,6 +87,17 @@ header {
             background-image: url(/images/CTA-crear-gifo-hover.svg);
             background-repeat: no-repeat;
 
+            
+        }
+        #burger{
+            visibility: hidden;
+            width: 100%;
+            height: 50%;
+            display: flex;
+            margin-top: 15px;
+            margin-left: -42%;
+            //position: relative;
+            
             
         }
     }
@@ -103,5 +121,32 @@ li:hover {
     width: auto;
     border-bottom: 2px solid #5ED7C6;
 
+
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+
+#boton_gifo{
+    visibility: hidden;
+}
+#burger{
+    visibility: visible;
+}
+.menu{
+    transform: translate(-50%,50px);
+    filter: brightness(110%);
+    background-color: #572EE5;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+}
+ul{
+    display: block;
+    flex-direction: column;
+    color: white;
+}
 
 }
