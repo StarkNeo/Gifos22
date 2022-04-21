@@ -127,26 +127,7 @@ li:hover {
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1500px) {
 
-#boton_gifo{
-    visibility: hidden;
-}
-#burger{
-    visibility: visible;
-}
-.menu{
-    transform: translate(-50%,50px);
-    filter: brightness(110%);
-    background-color: #572EE5;
-    width: 100vw;
-    height: 100vh;
-    z-index: 9999;
-}
-ul{
-    display: block;
-    flex-direction: column;
-    color: white;
-}
 
 }

@@ -39,15 +39,11 @@
         position: relative;
         display: grid;
         justify-content: space-between;
-
-
         grid-template-columns: 1fr;
         grid-template-rows: 0.5fr 0.5fr;
         border: 1px solid #572EE5;
-        //border: 1px solid orange;
-        //padding-left: 1.8%;
-        //padding-right: 1.8%;
         border-radius: 27px;
+        
         width: 551px;
         min-height: 50px;
         text-align: justify;
@@ -1068,4 +1064,13 @@
     background-color: blue;
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media screen and (max-width: 900px) {
+
+    #buscador {
+        max-width: 450px;
+        
+    }
+
 }

@@ -29,7 +29,7 @@ function giphy() {
             for (let index = 0; index < json.data.length; index++) {
 
                 let gifo = new Gifo();
-                gifo.urlImagen = json.data[index].images.fixed_height.url,
+                    gifo.urlImagen = json.data[index].images.fixed_height.url,
                     gifo.urlOriginal = json.data[index].images.original.url,
                     gifo.id = json.data[index].id,
                     gifo.title = json.data[index].title,
@@ -294,3 +294,15 @@ document.addEventListener('click', (e) => {
 })
 
 
+//***CARRUSEL MOBILE */
+
+function cargaMobile() {
+    //let imgMobile = document.getElementsByClassName('gifoMobile');
+    let imgMobile=document.querySelector('.gifoMobile');
+    //imgMobile.src=trending[0].urlImagen;
+    //console.log(trending[0].urlImagen);
+    //console.log(trending[0].urlOriginal);
+    
+    
+}
+cargaMobile();

@@ -109,33 +109,6 @@ li:hover {
   border-bottom: 2px solid #5ED7C6;
 }
 
-@media screen and (max-width: 600px) {
-  #boton_gifo {
-    visibility: hidden;
-  }
-  #burger {
-    visibility: visible;
-  }
-  .menu {
-    -webkit-transform: translate(-50%, 50px);
-            transform: translate(-50%, 50px);
-    -webkit-filter: brightness(110%);
-            filter: brightness(110%);
-    background-color: #572EE5;
-    width: 100vw;
-    height: 100vh;
-    z-index: 9999;
-  }
-  ul {
-    display: block;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    color: white;
-  }
-}
-
 #fotindex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1346,6 +1319,12 @@ p {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+@media screen and (max-width: 900px) {
+  #buscador {
+    max-width: 450px;
+  }
+}
+
 #seccionCarrusel {
   width: 100%;
   height: 100%;
@@ -1370,7 +1349,7 @@ p {
   display: -ms-flexbox;
   display: flex;
   width: 92%;
-  height: auto;
+  max-height: 275px;
   margin: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -1417,21 +1396,33 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 357px;
+  width: 24.8%;
   height: 275px;
+  max-width: 357px;
 }
 
-.giftrending .gifoImagen {
-  width: 100%;
-}
-
-.giftrending .botonesGifo {
-  position: absolute;
+.giftrending .imgCont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 357px;
-  height: 275px;
+  width: 100%;
+  height: 100%;
+  max-width: 357px;
+  max-height: 275px;
+}
+
+.giftrending .imgCont .gifoImagen {
+  width: 100%;
+  height: 100%;
+}
+
+.giftrending .botonesGifo {
+  margin-left: -100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
@@ -1471,6 +1462,11 @@ p {
 
 .giftrending:hover .datosGifo {
   opacity: 0.7;
+}
+
+.gifoMobile {
+  width: 100%;
+  height: 100%;
 }
 
 #popUpBox {
@@ -1561,6 +1557,32 @@ body {
 .smax:hover {
   -webkit-transform: translate(1px, -2px);
           transform: translate(1px, -2px);
+}
+
+#carruselMobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#carruselMobile .btnmobile {
+  width: 32px;
+  height: 32px;
+}
+
+@media screen and (max-width: 1000px) {
+  .giftrending {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .giftrending {
+    height: 150px;
+  }
 }
 
 ::-webkit-scrollbar {
