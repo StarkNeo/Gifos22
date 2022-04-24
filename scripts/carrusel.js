@@ -18,7 +18,7 @@ class Gifo {
 }
 
 let trending = [];//arreglo para almacenar los gifos trending
-
+let arregloMobile=[];//arreglo para version mobile
 function giphy() {
 
     fetch(uri + "?api_key=" + api_key_Carr + "&limit=12")
@@ -36,10 +36,13 @@ function giphy() {
                     gifo.usuario = json.data[index].username;
 
                 trending.push(gifo);
+                arregloMobile.push(gifo);
 
             }
 
             cargar()
+            cargaMobile();
+            //revista();
         })
 
 
@@ -119,6 +122,7 @@ function SliderLeft() {
     trending[trending.length - 1].id = slideLtwo;
     //console.log(trending);
     cargar();
+    cargaMobile();
 }
 
 //FUNCION DESLIZAMIENTO A LA DERECHA
@@ -146,6 +150,7 @@ function SlideRight() {
     trending[0].usuario = slideRfive;
 
     cargar();
+    cargaMobile();
 }
 
 //EVENTO BOTON SLIDER LEFT
@@ -202,6 +207,18 @@ document.addEventListener('click', e => {
         }
     }
 
+    else if(e.target.classList.contains('favMob')){
+        evaluar = favoritos.find(gifo => gifo.id === elemento);
+        if (evaluar === undefined) {
+            gifoFavorito = arregloMobile.find(gifo => gifo.id === elemento);
+            favoritos.push(gifoFavorito);
+            localStorage.setItem('favoritos', JSON.stringify(favoritos));
+            alert('El GIFO se agrego con exito a tus Favoritos');
+        }
+        else {
+            alert('EL GIFO YA SE ENCUENTRA!')
+        }
+    }
    
 
     e.stopPropagation();
@@ -237,7 +254,7 @@ document.addEventListener('click', e => {
     if (e.target.classList.contains('exp')) {
         let imagen = e.target.id; //VARIABLE PARA ASIGNAR A BOTON FAV
         let idown = trending.find(gifo => gifo.urlImagen === imagen).id; //VARIABLE PARA ASIGNAR A BOTON DOWN
-        let popUpBox = document.getElementById('popUpBox');
+        let popUpBox = document.querySelector('.popUpBox');
         document.body.style.visibility = 'hidden';
         popUpBox.style.visibility = "visible";
         //document.getElementById('modal').innerHTML =  
@@ -259,7 +276,7 @@ document.addEventListener('click', e => {
     if (e.target.classList.contains('smax')) {
         let imagen = e.target.id; //VARIABLE PARA ASIGNAR A BOTON FAV
         let idown = gifosFound.find(e => e.urlImagen === imagen).id; //VARIABLE PARA ASIGNAR A BOTON DOWN
-        let popUpBox = document.getElementById('popUpBox');
+        let popUpBox = document.querySelector('.popUpBox');
         document.body.style.visibility = 'hidden';
         popUpBox.style.visibility = "visible";
         //document.getElementById('modal').innerHTML =  
@@ -286,8 +303,9 @@ document.addEventListener('click', e => {
 
 document.addEventListener('click', (e) => {
     if (e.target.id === 'cerrarPop') {
-        let popUpBox = document.getElementById('popUpBox');
-
+        let popUpBox = document.querySelector('.popUpBox');
+        let popMobile=document.querySelector('.popMobile');
+        popMobile.style.visibility='hidden';
         popUpBox.style.visibility = "hidden";
         document.body.style.visibility = 'visible';
     }
@@ -296,13 +314,118 @@ document.addEventListener('click', (e) => {
 
 //***CARRUSEL MOBILE */
 
+let ides=[];
 function cargaMobile() {
-    //let imgMobile = document.getElementsByClassName('gifoMobile');
-    let imgMobile=document.querySelector('.gifoMobile');
-    //imgMobile.src=trending[0].urlImagen;
-    //console.log(trending[0].urlImagen);
-    //console.log(trending[0].urlOriginal);
+    let images = document.querySelector('.gifoImagenMobile');
+    let numeros=document.querySelectorAll('.conteo');
+    //let ides=[];
+    let n;    
+   
+
     
+    for (let x = 0; x < numeros.length; x++) {
+        numeros[x].id=arregloMobile[x].id;
+        console.log(numeros[x]);
     
+    }
+    
+    numeros.forEach(element => {
+        ides.push(element.id);      
+    });
+
+    let valorN=espanes();
+    if (valorN===undefined) {
+        n=0;
+        console.log(n);
+    } else {
+        n=valorN;
+        images.src=arregloMobile[n].urlImagen;
+        images.id=arregloMobile[n].id;
+        console.log(n);
+    }
+
+    setInterval(()=>{
+        images.src=arregloMobile[n].urlImagen;
+        images.id=arregloMobile[n].id;
+        
+        
+        if (n===0) {
+            numeros[n].style.backgroundColor='black';
+            numeros[n+11].style.backgroundColor='blue';
+        }
+        
+        else{
+            numeros[n].style.backgroundColor='black';
+            numeros[n-1].style.backgroundColor='blue';
+            
+        } 
+        
+
+        if (n===11) {
+            n=0;
+
+        } 
+        
+        else {
+            
+            n++
+            
+        }
+        
+    },3000)
+   
 }
-cargaMobile();
+
+function espanes() {
+    let arregloSpanes=document.querySelectorAll('.conteo');
+    let datoId;
+    let random;
+    arregloSpanes.forEach(element => {
+        element.addEventListener('click',()=>{
+            datoId=element.id;
+            console.log(datoId);
+            console.log(ides.indexOf(datoId));
+            random=ides.indexOf(datoId);            
+        })
+    });
+    
+    return random;
+}
+
+
+//document.querySelector('.adelante').addEventListener('click',()=>SliderLeft());
+//document.querySelector('.atras').addEventListener('click',()=>SlideRight());
+
+document.addEventListener('click', e => {
+    if (e.target.classList.contains('gifoImagenMobile')) {
+        let imagen = e.target.src; //VARIABLE PARA ASIGNAR A BOTON FAV
+        let imagenId=e.target.id;
+        let user=arregloMobile.find(gifo => gifo.id===imagenId).usuario;
+        let titulo=arregloMobile.find(gifo=>gifo.id===imagenId).title;
+        //let idown = arregloMobile.find(gifo => gifo.urlImagen === imagen).urlImagen; //VARIABLE PARA ASIGNAR A BOTON DOWN
+        let popUpBox = document.querySelector('.popMobile');
+        document.body.style.visibility = 'hidden';
+        popUpBox.style.visibility = "visible";
+        popUpBox.innerHTML =
+            `
+            <button id='cerrarPop'>X</button>
+            <img id='imgpopMobile' src="${imagen}" alt="">
+            
+            <div id='popiconsMobile'>
+                    <img id='${imagenId}' class='found favMob' src='/images/icon-fav.svg' alt=""> 
+                    <img id='${imagenId}' class='found sdown' src='/images/icon-download.svg' alt="">
+                    
+                    </div>
+                    <div class='datosGifo'>
+                    
+                    <span class="dataGifuser">${user}</span>
+                    <span>${titulo}</span>
+                    
+                    </div>
+        
+        
+        `;
+
+    }
+
+})
