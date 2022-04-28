@@ -1074,3 +1074,31 @@
     }
 
 }
+@media screen and(max-width:600px){
+
+    #busqueda{
+        max-width: 600px;
+        //background-color: #572EE5;
+        display: flex;
+        
+        #tituloSeccionBuscar{
+            width: 100%;
+            font-size: 30px;
+            //background-color: aqua;
+        }
+
+        #buscador{
+            display: flex;
+            width: 80%;
+            //background-color: burlywood;
+            justify-content: center;
+        }
+        #imagenSeccionBuscar{
+            width: 80%;
+        }
+    }
+
+
+
+
+}

@@ -232,20 +232,26 @@ body {
 //Gifo con sus botones de accion e informacion del Gifo
 
 #cuentaSlide{
+    //width: 70vw;
+    //width: 357px;
     width: 357px;
-    display: none;
+    display: flex;
+margin: auto;
     justify-content: space-between;
+    flex-wrap: wrap;
+    //margin-left: 10%;
+    visibility: hidden;
     
-    margin: auto;
+    
 }
 .conteo{
     width: auto;
     background-color:blue;
     width: 15px;
-    height: 15px;
+    height: 5px;
     opacity: 1;
     //border: 1px solid blue;
-    border-radius: 100%;
+    border-radius: 30%;
 }
 .conteo:hover{
     transform: translateY(-1px);
@@ -296,15 +302,15 @@ body {
 }
 
 .popMobile {
-    width: 400px;
-    height: 400px;
+    width: 80vw;
+    height: auto;
     background-color: honeydew;
     box-shadow: 0 0 10px black;
     border-radius: 10px;
     position: fixed;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    //left: 50%;
+    //transform: translate(-50%, -50%);
     z-index: 5;
     padding: 10px;
     text-align: center;
@@ -331,6 +337,16 @@ body {
 
 }
 
+#navMobile{
+    width: 100vw;
+    height: auto;
+    background-color: white;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    opacity: 1;
+
+}
 
 
 @media screen and (max-width: 1000px) {
@@ -362,6 +378,25 @@ body {
         display: flex;
     }
     #cuentaSlide{
+        visibility: visible;
+    }
+}
+@media screen and (max-width:380px){
+
+    .imgCont{
+        width: 100vw;
+
+        .gifoImagenMobile{
+            width: 100%;
+
+        }
+    }
+
+    #cuentaSlide{
         display: flex;
+        width: 80%;
+        height: 30px;
+        flex-wrap: wrap;
+        
     }
 }

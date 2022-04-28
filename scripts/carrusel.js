@@ -18,7 +18,8 @@ class Gifo {
 }
 
 let trending = [];//arreglo para almacenar los gifos trending
-let arregloMobile=[];//arreglo para version mobile
+let arregloMobile = [];//arreglo para version mobile
+let ides = [];
 function giphy() {
 
     fetch(uri + "?api_key=" + api_key_Carr + "&limit=12")
@@ -29,7 +30,7 @@ function giphy() {
             for (let index = 0; index < json.data.length; index++) {
 
                 let gifo = new Gifo();
-                    gifo.urlImagen = json.data[index].images.fixed_height.url,
+                gifo.urlImagen = json.data[index].images.fixed_height.url,
                     gifo.urlOriginal = json.data[index].images.original.url,
                     gifo.id = json.data[index].id,
                     gifo.title = json.data[index].title,
@@ -41,7 +42,8 @@ function giphy() {
             }
 
             cargar()
-            cargaMobile();
+            //cargaMobile(arregloMobile);
+            cargaSpans();
             //revista();
         })
 
@@ -179,9 +181,9 @@ let favoritos = JSON.parse(localStorage.getItem('favoritos'));
 document.addEventListener('click', e => {
     let elemento = e.target.id;
     let gifoFavorito;
-    let evaluar;    
+    let evaluar;
     if (e.target.classList.contains('fav')) {
-        
+
         evaluar = favoritos.find(gifo => gifo.id === elemento);
         if (evaluar === undefined) {
             gifoFavorito = trending.find(gifo => gifo.id === elemento);
@@ -194,7 +196,7 @@ document.addEventListener('click', e => {
             alert('EL GIFO ya se encuentra en tus favoritos!')
         }
     }
-    else if(e.target.classList.contains('sfav')){
+    else if (e.target.classList.contains('sfav')) {
         evaluar = favoritos.find(gifo => gifo.id === elemento);
         if (evaluar === undefined) {
             gifoFavorito = gifosFound.find(gifo => gifo.id === elemento);
@@ -207,7 +209,7 @@ document.addEventListener('click', e => {
         }
     }
 
-    else if(e.target.classList.contains('favMob')){
+    else if (e.target.classList.contains('favMob')) {
         evaluar = favoritos.find(gifo => gifo.id === elemento);
         if (evaluar === undefined) {
             gifoFavorito = arregloMobile.find(gifo => gifo.id === elemento);
@@ -219,7 +221,7 @@ document.addEventListener('click', e => {
             alert('EL GIFO YA SE ENCUENTRA!')
         }
     }
-   
+
 
     e.stopPropagation();
 });
@@ -304,18 +306,130 @@ document.addEventListener('click', e => {
 document.addEventListener('click', (e) => {
     if (e.target.id === 'cerrarPop') {
         let popUpBox = document.querySelector('.popUpBox');
-        let popMobile=document.querySelector('.popMobile');
-        popMobile.style.visibility='hidden';
+        let popMobile = document.querySelector('.popMobile');
+        popMobile.style.visibility = 'hidden';
         popUpBox.style.visibility = "hidden";
         document.body.style.visibility = 'visible';
+        document.getElementById('burger').style.visibility='visible';
     }
 })
 
 
 //***CARRUSEL MOBILE */
 
+function cargaSpans() {
+
+    arregloMobile.forEach(element => {
+        ides.push(element.id);
+
+    });
+    let spanes = document.querySelectorAll('.conteo');
+    for (let index = 0; index < spanes.length; index++) {
+        spanes[index].id = ides[index];
+
+    }
+    console.log(ides);
+    console.log(spanes);
+
+
+}
+let images = document.querySelector('.gifoImagenMobile');
+let numeros = document.querySelectorAll('.conteo');
+
+
+//function clickSpan() {
+let spanObj = document.querySelectorAll('.conteo');
+//let valorN;
+//let reset;
+spanObj.forEach(element => {
+    element.addEventListener('click', () => {
+        console.log(element.id)
+        console.log(ides.indexOf(element.id));
+        let valorN = ides.indexOf(element.id);
+        console.log(arregloMobile[valorN].urlImagen);
+        images.src = arregloMobile[valorN].urlImagen;
+        images.id = arregloMobile[valorN].id;
+        let reset = 1;
+        console.log(reset);
+        
+    })
+
+});
+//console.log(reset);
+//console.log(valorN);
+
+//            sinname(valorN,reset);
+//buscarClick(valorN)
+//}
+
+//clickSpan();
+sinname(undefined,0);
+
+
+
+function sinname(params, y) {
+    //console.log(params);
+    //console.log('y= ' + y);
+    let valorN = params;
+    let reinicio = y;
+    //console.log('estoy arriba' + reinicio);
+    //valorN = 0;
+    setInterval(() => {
+
+        if (valorN === undefined) {
+            valorN = 0;
+        }
+        else if (reinicio === 1) {
+            valorN = params;
+            //console.log('aquivoy:' + valorN)
+
+        }
+
+
+        images.src = arregloMobile[valorN].urlImagen;
+        images.id = arregloMobile[valorN].id;
+      //  console.log(valorN);
+
+        //estilos del contador
+        if (valorN === 0) {
+            numeros[valorN].style.backgroundColor = 'black';
+            numeros[valorN + 11].style.backgroundColor = 'blue';
+        }
+
+        else {
+            numeros[valorN].style.backgroundColor = 'black';
+            numeros[valorN - 1].style.backgroundColor = 'blue';
+
+        }
+
+        //repite ciclo de slides
+        if (valorN === 11) {
+            valorN = 0;
+        }
+
+        else {
+
+            valorN++;
+
+        }
+
+
+    }, 3000)
+
+
+
+}
+
+
+
+//sinname();
+/*
 let ides=[];
-function cargaMobile() {
+function cargaMobile(arreglo) {
+    
+    
+
+    
     let images = document.querySelector('.gifoImagenMobile');
     let numeros=document.querySelectorAll('.conteo');
     //let ides=[];
@@ -391,7 +505,7 @@ function espanes() {
     
     return random;
 }
-
+*/
 
 //document.querySelector('.adelante').addEventListener('click',()=>SliderLeft());
 //document.querySelector('.atras').addEventListener('click',()=>SlideRight());
@@ -399,12 +513,14 @@ function espanes() {
 document.addEventListener('click', e => {
     if (e.target.classList.contains('gifoImagenMobile')) {
         let imagen = e.target.src; //VARIABLE PARA ASIGNAR A BOTON FAV
-        let imagenId=e.target.id;
-        let user=arregloMobile.find(gifo => gifo.id===imagenId).usuario;
-        let titulo=arregloMobile.find(gifo=>gifo.id===imagenId).title;
+        let imagenId = e.target.id;
+        
+        let user = arregloMobile.find(gifo => gifo.id === imagenId).usuario;
+        let titulo = arregloMobile.find(gifo => gifo.id === imagenId).title;
         //let idown = arregloMobile.find(gifo => gifo.urlImagen === imagen).urlImagen; //VARIABLE PARA ASIGNAR A BOTON DOWN
         let popUpBox = document.querySelector('.popMobile');
         document.body.style.visibility = 'hidden';
+        document.getElementById('burger').style.visibility='hidden';
         popUpBox.style.visibility = "visible";
         popUpBox.innerHTML =
             `
@@ -429,3 +545,19 @@ document.addEventListener('click', e => {
     }
 
 })
+
+document.getElementById('burger').addEventListener('click',()=>{
+    console.log('A LA BURGER')
+    document.body.style.opacity='0.3';
+    document.body.style.backgroundColor='blue';
+    document.body.innerHTML=`
+    
+    <div id='navMobile'>
+        <img id="logo" src="/images/logo-desktop.svg" alt="logo_gifos">
+        <button id='cerrarNav'>X</button>
+    </div>   
+
+
+`;
+    
+});
