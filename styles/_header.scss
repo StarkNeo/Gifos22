@@ -125,6 +125,8 @@ li:hover {
 
 }
 
+
+
 @media screen and (max-width: 600px) {
 
     #boton_gifo{
@@ -134,7 +136,7 @@ li:hover {
         
     }
 
-    ul{
+.menu ul{
         visibility: hidden;
         display: flex;
         width: 100%;
@@ -202,6 +204,8 @@ li:hover {
     }
 */
 }
+
+
 
 @media screen and(max-width:480px) {
     #burger{

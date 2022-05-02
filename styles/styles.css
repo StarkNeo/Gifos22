@@ -118,7 +118,7 @@ li:hover {
     margin-left: 1px;
     width: 0px;
   }
-  ul {
+  .menu ul {
     visibility: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1787,18 +1787,79 @@ body {
   margin: auto;
 }
 
-#navMobile {
-  width: 100vw;
-  height: auto;
-  background-color: white;
+.capaEstilo {
+  position: absolute;
   z-index: 9999;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+  background-color: blue;
+}
+
+#cerrarNav {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin-left: 65%;
+  border: none;
+  background-color: transparent;
+}
+
+#navMobile {
+  background-color: blue;
+}
+
+#headNav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  opacity: 1;
+  margin-top: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 95px;
+  width: 100%;
+  background-color: white;
+}
+
+#headNav #logoMobile {
+  margin-left: 20px;
+  -webkit-filter: saturate(50%);
+          filter: saturate(50%);
+  width: 15%;
+}
+
+#ulMob {
+  color: white;
+  font-weight: 900;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#ulMob li {
+  background-color: blue;
+  text-decoration: underline;
+  text-underline-offset: 18px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60px;
+  margin-top: 19px;
 }
 
 @media screen and (max-width: 1000px) {

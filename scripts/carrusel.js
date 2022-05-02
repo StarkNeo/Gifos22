@@ -546,18 +546,44 @@ document.addEventListener('click', e => {
 
 })
 
+
 document.getElementById('burger').addEventListener('click',()=>{
     console.log('A LA BURGER')
-    document.body.style.opacity='0.3';
-    document.body.style.backgroundColor='blue';
-    document.body.innerHTML=`
+    let capaBurger=document.querySelector('div','capaMobile');
+    capaBurger.classList.toggle('capaEstilo');
+    document.querySelector('header').style.visibility='hidden';
+    document.querySelector('#burger').style.visibility='hidden';
+    
+    capaBurger.innerHTML=
+    `
     
     <div id='navMobile'>
-        <img id="logo" src="/images/logo-desktop.svg" alt="logo_gifos">
-        <button id='cerrarNav'>X</button>
+        <div id='headNav'>
+            <img id="logoMobile" src="/images/logo-mobile.svg" alt="logo_gifos">
+            <img id='cerrarNav' src='/images/close.svg'></button>
+             
+        </div>
+        <ul id='ulMob'>
+             <li>Modo Nocturno</li>
+             <li>Favoritos</li>
+             <li>Mis GIFOS</li>
+        </ul>
     </div>   
 
 
 `;
     
 });
+
+
+document.addEventListener('click',e=>{
+    if (e.target.id==='cerrarNav') {
+        let capaBurger=document.querySelector('div','capaMobile');
+        capaBurger.classList.toggle('capaEstilo');
+        capaBurger.style.display='none';
+        document.querySelector('header').style.visibility='visible';
+        document.querySelector('#burger').style.visibility='visible';
+        
+        console.log('esta funcionando el click');
+    }
+})
