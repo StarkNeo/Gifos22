@@ -342,14 +342,20 @@ body {
 
 }
 
-.capaEstilo{
-    position: absolute;
+#capaMobile{
+    display: none;
+    position: relative;
     z-index: 9999;
+    
     width: 100%;
     height: 100%;
     opacity: 0.85;
-    background-color: blue;
 }
+
+header{
+    visibility: visible;
+}
+
 #cerrarNav{
     width: 20px;
     height: 20px;
@@ -361,7 +367,11 @@ body {
 }
 #navMobile{
     background-color: blue;
-    
+    height: 500px;
+    width: 96.8vw;
+    height: 140vh;
+    position: fixed;
+    //display: none;
 }
 #headNav{
     display: flex;

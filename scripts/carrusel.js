@@ -310,7 +310,7 @@ document.addEventListener('click', (e) => {
         popMobile.style.visibility = 'hidden';
         popUpBox.style.visibility = "hidden";
         document.body.style.visibility = 'visible';
-        document.getElementById('burger').style.visibility='visible';
+        document.getElementById('burger').style.visibility = 'visible';
     }
 })
 
@@ -351,7 +351,7 @@ spanObj.forEach(element => {
         images.id = arregloMobile[valorN].id;
         let reset = 1;
         console.log(reset);
-        
+
     })
 
 });
@@ -363,7 +363,7 @@ spanObj.forEach(element => {
 //}
 
 //clickSpan();
-sinname(undefined,0);
+sinname(undefined, 0);
 
 
 
@@ -388,7 +388,7 @@ function sinname(params, y) {
 
         images.src = arregloMobile[valorN].urlImagen;
         images.id = arregloMobile[valorN].id;
-      //  console.log(valorN);
+        //  console.log(valorN);
 
         //estilos del contador
         if (valorN === 0) {
@@ -514,13 +514,13 @@ document.addEventListener('click', e => {
     if (e.target.classList.contains('gifoImagenMobile')) {
         let imagen = e.target.src; //VARIABLE PARA ASIGNAR A BOTON FAV
         let imagenId = e.target.id;
-        
+
         let user = arregloMobile.find(gifo => gifo.id === imagenId).usuario;
         let titulo = arregloMobile.find(gifo => gifo.id === imagenId).title;
         //let idown = arregloMobile.find(gifo => gifo.urlImagen === imagen).urlImagen; //VARIABLE PARA ASIGNAR A BOTON DOWN
         let popUpBox = document.querySelector('.popMobile');
         document.body.style.visibility = 'hidden';
-        document.getElementById('burger').style.visibility='hidden';
+        document.getElementById('burger').style.visibility = 'hidden';
         popUpBox.style.visibility = "visible";
         popUpBox.innerHTML =
             `
@@ -546,44 +546,35 @@ document.addEventListener('click', e => {
 
 })
 
+function abrirMenuBurger() {
+    document.querySelector('#burger').style.visibility = 'hidden';
+    document.querySelector('header').style.borderTop = 'none';
+    document.querySelector('#capaMobile').style.display='block';
+    document.querySelector('.menu').style.visibility='hidden';
+    document.querySelector('#logo').style.visibility='hidden';
+    document.querySelector('#tituloSeccionBuscar').style.marginTop='25px';
 
-document.getElementById('burger').addEventListener('click',()=>{
-    console.log('A LA BURGER')
-    let capaBurger=document.querySelector('div','capaMobile');
-    capaBurger.classList.toggle('capaEstilo');
-    document.querySelector('header').style.visibility='hidden';
-    document.querySelector('#burger').style.visibility='hidden';
-    
-    capaBurger.innerHTML=
-    `
-    
-    <div id='navMobile'>
-        <div id='headNav'>
-            <img id="logoMobile" src="/images/logo-mobile.svg" alt="logo_gifos">
-            <img id='cerrarNav' src='/images/close.svg'></button>
-             
-        </div>
-        <ul id='ulMob'>
-             <li>Modo Nocturno</li>
-             <li>Favoritos</li>
-             <li>Mis GIFOS</li>
-        </ul>
-    </div>   
+}
+
+function cerrarMenuBurger() {
+    document.querySelector('#burger').style.visibility = 'visible';
+    document.querySelector('header').style.display = 'flex';
+    document.querySelector('#capaMobile').style.display='none';
+    document.querySelector('.menu').style.visibility='visible';
+    document.querySelector('#logo').style.visibility='visible';
+}
 
 
-`;
-    
-});
 
-
-document.addEventListener('click',e=>{
-    if (e.target.id==='cerrarNav') {
-        let capaBurger=document.querySelector('div','capaMobile');
-        capaBurger.classList.toggle('capaEstilo');
-        capaBurger.style.display='none';
-        document.querySelector('header').style.visibility='visible';
-        document.querySelector('#burger').style.visibility='visible';
-        
-        console.log('esta funcionando el click');
+document.addEventListener('click', e => {
+    if (e.target.id === 'cerrarNav') {
+        console.log('click en cerrar');
+        cerrarMenuBurger();
     }
+
+    else if(e.target.id==='burger'){
+        console.log('click en abrir');
+        abrirMenuBurger();
+    }
+
 })
